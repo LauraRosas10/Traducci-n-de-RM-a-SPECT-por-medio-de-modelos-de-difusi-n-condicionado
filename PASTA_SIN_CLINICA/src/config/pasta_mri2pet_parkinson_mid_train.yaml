@@ -1,0 +1,73 @@
+
+
+##### Unet config ####
+
+image_size: [192, 224]
+model_in_channels: 15
+out_channels_model: 15
+unet_dim: 64
+encoder_in_channels: 15
+out_channels_encoder: 15
+num_res_blocks: 2
+attention_resolutions: [16, 8, 4]
+num_heads: 4
+unet_dim_mults: [1, 2,3, 4]
+dropout: 0
+dims: 2
+cond_emb_channels: 2048
+resblock_updown: true
+use_time_condition: true
+tab_cond_dim: 0
+use_tabular_cond_model: null
+use_tabular_cond_encoder: null
+tabular_cond: false
+with_attention: true
+cond_apply_method: 'ada'
+
+##### Diffusion config ####
+
+timestep_respacing: ddim100 
+beta_schedule: cosine
+timesteps: 1000
+objective: START_X
+model_var_type: FIXED_LARGE
+gen_type: ddim
+condition: true
+loss_type: l1
+reconstructed_loss: l1
+recon_weight: 0.1
+rescale_intensity: true
+
+##### Trainer config ####
+
+input_slice_channel: 15
+data_dir: "/home/brain/Data/Users/jeison/PASTA_SIN_CLINICA/data/"
+train_batch_size: 1
+train_lr: !!float 5e-4
+weight_decay: !!float 1e-6
+train_num_steps: 80000
+save_and_sample_every: 100
+num_samples: 16
+gradient_accumulate_every: 4
+ema_decay: 0.999
+amp: false
+fp16: true
+calculate_fid: false
+dataset: MRI2PET
+image_direction: axial
+num_slices: 16
+ROI_mask: "/home/brain/Data/Users/jeison/difusion/ROI_mask/parkinson_ROI_mask.nii.gz"
+model_cycling: false
+with_DTI: false
+dx_labels: ['CN', 'Parkinson']
+results_folder: "/home/brain/Data/Users/jeison/PASTA_SIN_CLINICA/results_parkinson"
+resume: "/home/brain/Data/Users/jeison/PASTA_SIN_CLINICA/results_parkinson/model.pt"
+pretrain: null
+
+###### evaluation config #####
+
+test_batch_size: 1
+eval_dataset: ADNI
+eval_resolution:  [192, 224, 182]
+eval_mode: false
+synthesis: false
