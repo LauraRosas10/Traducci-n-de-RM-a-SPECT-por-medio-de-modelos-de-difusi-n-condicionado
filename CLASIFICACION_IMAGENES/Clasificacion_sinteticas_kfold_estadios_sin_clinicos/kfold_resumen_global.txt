@@ -1,0 +1,53 @@
+RESUMEN GLOBAL K-FOLD — MobileNet
+==================================================
+
+Slice:
+  AUC                 : 0.5229 ± 0.1551
+  Balanced Accuracy   : 0.5250 ± 0.0313
+  Recall              : 0.9333 ± 0.0907
+  Specificity         : 0.1167 ± 0.1453
+  F1-Score            : 0.7179 ± 0.0195
+
+Sujeto:
+  AUC                 : 0.5167 ± 0.2134
+  Balanced Accuracy   : 0.5417 ± 0.0645
+  Recall              : 0.9500 ± 0.1000
+  Specificity         : 0.1333 ± 0.1633
+  F1-Score            : 0.7297 ± 0.0423
+
+Métricas por fold (Sujeto):
+
+  Fold 1:
+    AUC                 : 0.5000
+    Balanced Accuracy   : 0.5417
+    Recall              : 0.7500
+    Specificity         : 0.3333
+    F1-Score            : 0.6667
+
+  Fold 2:
+    AUC                 : 0.5000
+    Balanced Accuracy   : 0.5000
+    Recall              : 1.0000
+    Specificity         : 0.0000
+    F1-Score            : 0.7273
+
+  Fold 3:
+    AUC                 : 0.5833
+    Balanced Accuracy   : 0.6667
+    Recall              : 1.0000
+    Specificity         : 0.3333
+    F1-Score            : 0.8000
+
+  Fold 4:
+    AUC                 : 0.1667
+    Balanced Accuracy   : 0.5000
+    Recall              : 1.0000
+    Specificity         : 0.0000
+    F1-Score            : 0.7273
+
+  Fold 5:
+    AUC                 : 0.8333
+    Balanced Accuracy   : 0.5000
+    Recall              : 1.0000
+    Specificity         : 0.0000
+    F1-Score            : 0.7273
