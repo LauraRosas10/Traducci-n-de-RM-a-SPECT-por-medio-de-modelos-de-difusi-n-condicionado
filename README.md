@@ -89,16 +89,10 @@ para normalizar val/test (evita fuga de información del conjunto de evaluación
 | 15 | `UPDRS_DYSKPRES` | Presencia de discinesias |
 | 16 | `UPDRS_DYSKIRAT` | Grado de interferencia de las discinesias |
 
-> **Nota sobre datos faltantes:** las escalas UPDRS suelen registrarse solo (o con mayor completitud)
-> en pacientes con Parkinson; verifica si los controles (`CN`) tienen valores nulos en estas columnas
-> y define una estrategia de imputación (ej. 0 para ausencia de síntomas motores, o exclusión de esas
-> filas) antes de calcular `mean`/`stddev`.
-
 ## Uso
 
 El paquete usa [PyTorch](https://pytorch.org). Para entrenar y evaluar el modelo, ejecutar el script
-`train_mri2pet.py` (renombrar a `train_mri2dat.py` si se desea reflejar la nueva tarea). La
-configuración de argumentos se encuentra en `src/config/pasta_pd.yaml`.
+`train_mri2pet.py`. La configuración de argumentos se encuentra en `src/config/`.
 
 Argumentos principales:
 
@@ -110,7 +104,7 @@ Argumentos principales:
   - `--synthesis`: *True* para guardar las imágenes sintetizadas durante evaluación.
 
 ```bash
-python train_mri2pet.py --config src/config/pasta_pd.yaml
+python train_mri2pet.py --config src/config/pasta......yaml
 ```
 
 ## Diferencias clave respecto al repositorio original (ADNI)
